@@ -34,13 +34,24 @@ case "count":
     print(array.count)
     finished = true
 case "avg":
-    print("avg")
+    print(firstInput)
     finished = true
 case "fact":
     var fact : Int = 1;
     var input1 = Int.init(firstInput)!
-    for index in 1 ... input1 {
-        fact *= index
+    
+    if input1 > 0 {
+        for index in 1 ... input1 {
+            fact *= index
+        }
+    }
+    if input1 == 0 {
+        fact = 1
+    }
+    
+    if input1 < 0 {
+        fact = -1
+        print("No negative factorials, or -1 will be printed")
     }
     finished = true
     print(fact)
@@ -53,11 +64,11 @@ if operand {
     var int2 = UInt.init(num2)!
     switch secondInput {
     case "+":
-    print(first + int2)
-    finished = true
+        print(first + int2)
+        finished = true
     case "-":
-    print(first - int2)
-    finished = true
+        print(first - int2)
+        finished = true
     case "*":
         print(first * int2)
         finished = true
